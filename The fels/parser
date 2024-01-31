@@ -1,0 +1,57 @@
+using System;
+using System.IO;
+namespace Language
+{
+    static class parser
+    {
+        public static int NumberExpression(int one,char a,int two)//(writeln[0]) 5[1] +[2] 5[3]
+        {
+            int ansver;
+            switch (a)
+            {
+                default:
+                    return 0;
+                case '+':
+                    ansver = one + two;
+                    return ansver;
+                case '-':
+                    ansver = one - two;
+                    return ansver;
+                case '*':
+                    ansver = one * two;
+                    return ansver;
+                case '/':
+                    ansver = one / two;
+                    return ansver;
+            }
+        } 
+        public static bool QuestionExpression(int one,String ch,int two)
+        {
+            switch (ch)
+            {
+                default : return false;
+                case ">":
+                    if (one > two) return true; else return false;
+                case "<":
+                    if(one < two) return true;else return false;
+                case "==":
+                    if (one == two) return true; else return false;
+                case "!=":
+                    if (one != two) return true; else return false;
+            }
+        }
+        public static int ToInt(String i)
+        {
+            return Convert.ToInt32(i);
+        }
+    }
+    static class exceptions
+    {
+        public static String EndOfFile() { return "EndOfFile"; Environment.Exit(0); }
+        public static String NonQEOperathor() { return "not found QE operathor"; Environment.Exit(0); }
+        public static void exit(int number) { Environment.Exit(number); }
+        public static void NonLibraryException() { Console.Write("NonLiabrary");Console.ReadKey();exit(0); }
+        public static void NotInstallLibrary() { Console.WriteLine("Non fdk install(install fdk for install)");Console.ReadKey();exit(0); }
+        public static void NotOperathorExpected() { Console.WriteLine("Not logical operathor");Environment.Exit(0); }
+    }
+}
