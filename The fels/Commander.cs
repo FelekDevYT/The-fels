@@ -421,14 +421,10 @@ namespace Language
                         }
                         Console.WriteLine(Math.Pow(parser.ToInt(line[1]), parser.ToInt(line[2])));
                         break;
-                    case "readENC":
-                        String[] fle = File.ReadAllText(line[1]).Split('$');
-                        if (fle[0] == "start")
-                        {
-                            System.Diagnostics.Process.Start(fle[1]);
-                        }
-                        break;
                     case ";"://unde
+                        break;
+                    case "close":
+                        Environment.Exit(0);
                         break;
                 }
                 frst++;
